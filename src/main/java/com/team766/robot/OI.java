@@ -13,16 +13,13 @@ import com.team766.robot.procedures.*;
  */
 public class OI extends Procedure {
 	private JoystickReader joystick0;
-	private JoystickReader joystick1;
-	private JoystickReader joystick2;
+
 	private double elevatorUp;
 
 	public OI() {
 		loggerCategory = Category.OPERATOR_INTERFACE;
 
 		joystick0 = RobotProvider.instance.getJoystick(0);
-		joystick1 = RobotProvider.instance.getJoystick(1);
-		joystick2 = RobotProvider.instance.getJoystick(2);
 	}
 	
 	public void run(Context context) {
@@ -52,12 +49,13 @@ public class OI extends Procedure {
 
 			//Robot.drive.setArcadeDrivePower(leftJoystick1, leftJoystick2);
 			Robot.drive.setArcadeDrivePower(leftJoystick1, leftJoystick2);     
-			
+
+
 			if(joystick0.getButton(2)){
 				elevatorUp = 1.0;
 				log("up button pressed");
 			}
-			else if(joystick0.getButton(3)){
+			else if(joystick0.getButton(0)){
 				elevatorUp = -1.0;
 			}
 			else {
