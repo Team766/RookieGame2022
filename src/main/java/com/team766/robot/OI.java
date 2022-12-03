@@ -30,14 +30,23 @@ public class OI extends Procedure {
 			// Add driver controls here - make sure to take/release ownership
 			// of mechanisms when appropriate.
 			Robot.drive.setArcadeDrivePower(joystick0.getAxis(3)-joystick0.getAxis(2), joystick0.getAxis(0));
-			Robot.intake.setIntakePower(joystick0.getAxis(5));
+			Robot.intake.setIntakePower(joystick0.getAxis(5)/3);
 			log("intake power: "+joystick0.getAxis(5));
+			log("1: "+joystick0.getButton(1));
+			log("2: "+joystick0.getButton(2));
+			log("3: "+joystick0.getButton(3));
+			log("4: "+joystick0.getButton(4));
+			log("5: "+joystick0.getButton(5));
+			log("6: "+joystick0.getButton(6));
+			log("7: "+joystick0.getButton(7));
+			log("8: "+joystick0.getButton(8));
 			if(joystick0.getButton(5)){
 				Robot.elevator.setElevatorPower(0.2);
 				//might change motor power for more speed
-			} 
-			else if(joystick0.getButton(4)){
+			} else if (joystick0.getButton(6)){
 				Robot.elevator.setElevatorPower(-0.2);
+			} else {
+				Robot.elevator.setElevatorPower(0);
 			}
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
 		}
