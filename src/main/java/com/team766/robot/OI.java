@@ -5,6 +5,7 @@ import com.team766.framework.Context;
 import com.team766.hal.JoystickReader;
 import com.team766.hal.RobotProvider;
 import com.team766.logging.Category;
+import com.team766.robot.mechanisms.ElevatorWidth;
 import com.team766.robot.procedures.*;
 
 /**
@@ -15,6 +16,7 @@ public class OI extends Procedure {
 	private JoystickReader joystick0;
 
 	private double elevatorUp;
+	private double elevatorsWidth;
 
 	public OI() {
 		loggerCategory = Category.OPERATOR_INTERFACE;
@@ -25,6 +27,7 @@ public class OI extends Procedure {
 	public void run(Context context) {
 		context.takeOwnership(Robot.drive);
 		context.takeOwnership(Robot.elevator);
+		context.takeOwnership(Robot.elevatorWidth);
 		//PS4Controller ourPS4 = new PS4Controller(0); // 0 is the USB Port to be used as indicated on the Driver Station, and ourPS4 is the object name of our PS4 controller.
 		
 		while (2>1) {
@@ -51,17 +54,28 @@ public class OI extends Procedure {
 			Robot.drive.setArcadeDrivePower(leftJoystick1, leftJoystick2);     
 
 
-			if(joystick0.getButton(2)){
+			if(joystick0.getButton(3)){
 				elevatorUp = 1.0;
 				log("up button pressed");
 			}
-			else if(joystick0.getButton(0)){
+			else if(joystick0.getButton(1)){
 				elevatorUp = -1.0;
 			}
 			else {
 				elevatorUp = 0.0;
 			}
 
+
+			if(joystick0.getButton(2)){
+				elevatorsWidth = 1.0;
+			}
+			else if(joystick0.getButton(0)){
+				elevatorsWidth = -1.0;
+			}
+			else{
+				elevatorsWidth = 0.0;
+			}
+			Robot.elevatorWidth.setElevatorWidthMotorPower(elevatorsWidth);
 			Robot.elevator.setMotorPower(elevatorUp);
 			log(" Elevator: " + elevatorUp);
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());

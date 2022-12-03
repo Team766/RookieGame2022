@@ -7,11 +7,13 @@ public class Robot {
 	public static Drive drive;
 	public static Elevator elevator;
 	public static OI m_oi;
+	public static ElevatorWidth elevatorWidth;
 
 	public static void robotInit() {
 		// Initialize mechanisms here
 		drive = new Drive();
 		elevator = new Elevator();
 		m_oi = new OI();
+		elevatorWidth = new ElevatorWidth();
 	}
 }
