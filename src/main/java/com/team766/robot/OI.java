@@ -30,7 +30,7 @@ public class OI extends Procedure {
 			// Add driver controls here - make sure to take/release ownership
 			// of mechanisms when appropriate.
 			Robot.drive.setArcadeDrivePower(joystick0.getAxis(3)-joystick0.getAxis(2), joystick0.getAxis(0));
-			Robot.intake.setIntakePower(joystick0.getAxis(5)/3);
+			Robot.intake.setIntakePower(joystick0.getAxis(5)/2.7);
 			log("intake power: "+joystick0.getAxis(5));
 			log("1: "+joystick0.getButton(1));
 			log("2: "+joystick0.getButton(2));
