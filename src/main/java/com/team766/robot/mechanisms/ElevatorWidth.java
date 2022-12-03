@@ -6,17 +6,19 @@ import com.team766.hal.MotorController;
 import com.team766.hal.RobotProvider;
 
 public class ElevatorWidth extends Mechanism {
-	private MotorController motor;
+	private MotorController motorA;
+	private MotorController motorB;
 
 	public ElevatorWidth(){
-		motor = RobotProvider.instance.getMotor("elevatorWidth.motorWidth");
+		motorA = RobotProvider.instance.getMotor("elevatorWidth.motorAWidth");
+		motorB = RobotProvider.instance.getMotor("elevatorWidth.motorBWidth");
+		//needs 2 motors (because max is clueless)
 	}
 
-	public void setElevatorWidthMotorPower(double motorPower){
+	public void setElevatorWidthMotorPower(double motorAPower, double motorBPower){
 		checkContextOwnership();
-		double motorPowerElevator = motorPower;
-
-		motor.set(motorPower);
+		motorA.set(motorAPower);
+		motorB.set(motorBPower);
 
 	}
 }

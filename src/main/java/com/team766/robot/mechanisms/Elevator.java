@@ -10,13 +10,10 @@ public class Elevator extends Mechanism {
 	public Elevator(){
 		motor = RobotProvider.instance.getMotor("elevator.motor");
 	}
-
+	
 	public void setMotorPower(double motorPower){
 		checkContextOwnership();
-		double motorPowerElevator = motorPower;
-
 		motor.set(motorPower);
-
 	}
 }
 

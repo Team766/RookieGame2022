@@ -12,7 +12,6 @@ public class Drive extends Mechanism {
 		leftMotor = RobotProvider.instance.getMotor("drive.leftMotor");
 		rightMotor = RobotProvider.instance.getMotor("drive.rightMotor");
 
-		
 	}
 	public void setDrivePower(double leftPower, double rightPower){
 		checkContextOwnership();

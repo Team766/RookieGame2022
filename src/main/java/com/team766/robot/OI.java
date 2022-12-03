@@ -75,7 +75,7 @@ public class OI extends Procedure {
 			else{
 				elevatorsWidth = 0.0;
 			}
-			Robot.elevatorWidth.setElevatorWidthMotorPower(elevatorsWidth);
+			Robot.elevatorWidth.setElevatorWidthMotorPower(joystick0.getAxis(2), joystick0.getAxis(5));
 			Robot.elevator.setMotorPower(elevatorUp);
 			log(" Elevator: " + elevatorUp);
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
