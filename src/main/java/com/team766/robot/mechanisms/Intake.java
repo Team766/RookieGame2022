@@ -7,8 +7,8 @@ public class Intake extends Mechanism {
 	private MotorController leftIntake;
 	private MotorController rightIntake;
 	public Intake(){
-		leftIntake = RobotProvider.instance.getMotor("intakeWheels");
-		rightIntake = RobotProvider.instance.getMotor("intakeWheels");
+		leftIntake = RobotProvider.instance.getMotor("intake.wheel1");
+		rightIntake = RobotProvider.instance.getMotor("intake.wheel2");
 	}
 
 	public void setIntakePower(double giveOrTake){

@@ -7,6 +7,7 @@ public class Elevator extends Mechanism {
 	private MotorController elevatorMotor;
 	public Elevator(){
 		elevatorMotor = RobotProvider.instance.getMotor("elevator.Motor");
+		
 	}
 	public void setElevatorPower(double elevatePower){
 		checkContextOwnership();
