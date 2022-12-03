@@ -7,7 +7,7 @@ import com.team766.robot.Robot;
 public class DriveStraight extends Procedure {
 	public void run(Context context){
 		context.takeOwnership(Robot.drive);
-		Robot.drive.setDrivePower(0.25,0.25);
+		Robot.drive.setDrivePower(1.0,1.0);
 		context.waitForSeconds(3.0);
 		Robot.drive.setDrivePower(0.0, 0.0);
 	}
