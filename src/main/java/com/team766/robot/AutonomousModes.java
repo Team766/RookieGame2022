@@ -14,5 +14,6 @@ public class AutonomousModes {
 		//    new AutonomousMode("DriveSlow", () -> new DriveStraight(0.4)),
 
 		new AutonomousMode("DriveStraight", () -> new DriveStraight()),
+		
 	};
 }

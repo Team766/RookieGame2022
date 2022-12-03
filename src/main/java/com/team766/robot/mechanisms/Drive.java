@@ -14,12 +14,14 @@ public class Drive extends Mechanism {
 	}
 
 	public void setDrivePower(double leftPower, double rightPower) {
-			checkContextOwnership();
+		checkContextOwnership();
 
 		leftMotor.set(leftPower);
 		rightMotor.set(rightPower);
 	}
 	public void setArcadeDrivePower(double forward, double turn) {
+		checkContextOwnership();
+
 		double leftMotorPower = turn + forward;
 		double rightMotorPower = -turn + forward;
 		setDrivePower(leftMotorPower, rightMotorPower);

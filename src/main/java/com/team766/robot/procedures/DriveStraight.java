@@ -9,9 +9,7 @@ public class DriveStraight extends Procedure {
 	public void run(Context context) {
 		context.takeOwnership(Robot.drive);
 
-		Robot.drive.setDrivePower(0.25,0.25);
-
-		context.waitForSeconds(3.0);
+		Robot.drive.setDrivePower(-0.20,-0.20);
 
 		context.waitForSeconds(3.0);
 
