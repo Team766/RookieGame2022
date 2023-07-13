@@ -65,7 +65,7 @@ public class WPIRobotProvider extends RobotProvider {
 			case VictorSP:
 				motor = new LocalMotorController(new PWMVictorSP(index), localSensor);
 				localSensor = null;
-				break;
+				break; 
 		}
 		if (motor == null) {
 			LoggerExceptionUtils.logException(new IllegalArgumentException("Unsupported motor type " + type));
